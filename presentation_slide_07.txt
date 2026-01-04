@@ -1,0 +1,24 @@
+
+# Slide 7: Training Process
+
+**(Show the `training_history.png` plot)**
+
+**Hyperparameters:**
+*   **Optimizer:** Adam
+*   **Learning Rate:** 0.001 (with `ReduceLROnPlateau`)
+*   **Batch Size:** 32
+*   **Epochs:** Max 100 (with `EarlyStopping`)
+
+**Overfitting Prevention:**
+*   **Early Stopping:** Patience of 15 epochs.
+*   **ReduceLROnPlateau:** Reduces learning rate if validation loss plateaus.
+*   **Model Checkpointing:** Saves the best model based on validation accuracy.
+
+---
+**Slide Notes:**
+
+*   This slide shows the training history of our model. The plots show the accuracy and loss for both the training and validation sets over the epochs.
+*   We used the Adam optimizer, a popular choice that works well in practice. The learning rate was initially set to 0.001, but we used a callback to reduce it if the learning process plateaued.
+*   We trained the model in batches of 32 for a maximum of 100 epochs.
+*   However, we also used Early Stopping to monitor the validation loss and stop the training if the model was no longer improving. This, along with our other regularization techniques, helped to prevent overfitting.
+*   As you can see from the plots, the training and validation curves track each other very well, which indicates that our model is generalizing well and not just memorizing the training data.

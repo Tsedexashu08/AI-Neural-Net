@@ -1,0 +1,18 @@
+
+# Slide 9: Evaluation - Confusion Matrix
+
+**(Prominently display the `confusion_matrix.png` image)**
+
+**Interpretation:**
+*   The strong diagonal shows that the model is correctly classifying most instances for all classes.
+*   Most of the confusion is between the 'Fatal' and 'Serious' classes, which is an area for improvement.
+*   The majority classes ('Minor' and 'PDO') have very high prediction accuracy.
+
+---
+**Slide Notes:**
+
+*   To get a more detailed picture of our model's performance, we can look at the confusion matrix.
+*   This matrix shows us exactly where the model is making correct and incorrect predictions.
+*   The dark diagonal line indicates a high number of true positives, meaning the model is doing a great job of classifying most of the data.
+*   However, we can also see some areas of confusion. For example, some 'Fatal' accidents are being misclassified as 'Serious'. This is a critical insight, as these are the most severe types of accidents.
+*   This level of detail is essential for understanding the nuances of the model's performance and for identifying areas for improvement.

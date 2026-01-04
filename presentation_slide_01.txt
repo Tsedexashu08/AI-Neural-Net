@@ -1,0 +1,17 @@
+
+# Slide 1: Title Slide
+
+**Title:** Neural Network-Based Classification for Crash Data
+
+**Subtitle:** Project Report
+
+**Name/ID:** [Your Name/ID]
+
+**Date:** January 3, 2026
+
+---
+**Slide Notes:**
+
+*   Welcome everyone to my presentation on the neural network-based classification model for crash data.
+*   This project was undertaken as part of the requirements for the Neural Network-Based Classification assignment.
+*   Today, I will walk you through the process of building, training, and evaluating this model.

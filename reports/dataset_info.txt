@@ -1,0 +1,62 @@
+DATASET INFORMATION
+==================================================
+Shape: (60004, 54)
+Memory Usage: 102.18 MB
+Numeric Features: 22
+Categorical Features: 31
+
+Columns and Data Types:
+  Accident ID: int64
+  Accident Type: object
+  Time: object
+  Day of the week: object
+  Date: float64
+  Driver age: float64
+  Driver Sex: object
+  Driver Education Level: object
+  Driver experiance(years): float64
+  Driver Vehicle Relation: object
+  Vehicle Type: object
+  Veh Ownership: object
+  Veh Year of Service: float64
+  Vehicle Defects: object
+  Land Use: object
+  Road Type: object
+  Road Surface: object
+  Road Character: object
+  Junction Type: object
+  Light Condition: object
+  Weather Condition: object
+  Driver's Action: object
+  Primary Collision type: object
+  Number of fatalities: float64
+  Number of sever injuries: float64
+  Number of minor injuries: float64
+  Number of involved vehicles: float64
+  Estimated Property damage: float64
+  Region: float64
+  Zone: float64
+  Woreda (Sub-city): object
+  Location Easting: float64
+  Location Northing: float64
+  Exiting/entering: float64
+  Contributory Action: float64
+  Driving License: float64
+  Number of Casualties: int64
+  Victim-1 Type: object
+  Victim-2 Type: object
+  Victim-3 Type: object
+  Victim-1 Sex: object
+  Victim-2 Sex: object
+  Victim-3 Sex: object
+  Victim-1 age: float64
+  Victim-2 age: float64
+  Victim-3 age: float64
+  Victim-1 Injury Severity: object
+  Victim-2 Injury Severity: object
+  Victim-3 Injury Severity: object
+  Victim-1 Movement: object
+  Victim-2 Movement: object
+  Victim-3 Movement: object
+  Amet: float64
+  Wor: object

@@ -1,0 +1,83 @@
+Note: Please put your code, report and presentation slides (for both assignments) in Zipped file and upload it to the Moodle. 
+
+Deadline:  January 4, 2026  6PM local time.
+Assignment: Neural Network-Based Classification
+Objective:
+Apply neural network techniques to a provided dataset to build, train, and evaluate a classification model, demonstrating understanding of data preprocessing, model design, training protocols, evaluation, and interpretation.
+Submission Requirements:
+A well-documented Jupyter Notebook or Python script.
+A written report summarizing findings, methodology, and interpretations.
+Visualizations supporting analysis.
+
+Task 1: Data Understanding (Exploratory Data Analysis)
+Instructions:
+1.Load the dataset and examine its structure (rows, columns, data types).
+2.Identify and handle missing values, duplicates, or anomalies.
+3.Explore feature distributions (histograms, boxplots) and relationships (correlation matrices, scatter plots).
+4.Analyze class distribution in the target variable.
+5.Discuss any preprocessing requirements (e.g., normalization, scaling) to prepare data for a neural network.
+Deliverables:
+Summary statistics of each feature.
+Visualizations illustrating distributions and correlations.
+Written discussion of key insights and preprocessing needs.
+Task 2: Data Preparation
+Instructions:
+1.Handle missing values (imputation or removal) appropriately.
+2.Encode categorical variables using techniques compatible with neural networks (e.g., one-hot encoding, embedding).
+3.Perform feature scaling/normalization (e.g., MinMaxScaler, StandardScaler).
+4.Optionally, create new features if relevant (feature engineering).
+5.Split the dataset into training, validation, and test sets (e.g., 70%-15%-15%).
+Deliverables:
+Cleaned and preprocessed dataset.
+Explanation of encoding, scaling, and feature selection/engineering choices.
+Code implementing data splits.
+
+Task 3: Model Design
+Instructions:
+1.Architect a neural network suitable for the classification task:
+oSpecify the number of layers and neurons per layer.
+oChoose activation functions (e.g., ReLU, Sigmoid, Softmax).
+oEnsure the output layer aligns with the number of classes.
+2.Justify your design choices with respect to the dataset and classification problem.
+3.Optionally, explore multiple architectures and compare their complexity vs. performance.
+Deliverables:
+Diagram or description of the network architecture.
+Rationale for layer design, activations, and output configuration.
+Code defining the model using frameworks like TensorFlow/Keras or PyTorch.
+Task 4: Training Process
+Instructions:
+1.Define the loss function appropriate for the classification task (e.g., cross-entropy).
+2.Select optimizer(s) (e.g., Adam, SGD) and learning rate.
+3.Set training parameters: batch size, number of epochs.
+4.Implement techniques to prevent overfitting: dropout, early stopping, L2 regularization.
+5.Monitor training progress via loss and accuracy curves.
+Deliverables:
+Training logs/plots showing model performance over epochs.
+Discussion of overfitting mitigation strategies and their impact.
+Code implementing the training loop.
+
+Task 5: Evaluation
+Instructions:
+1.Evaluate the trained model on the test set using:
+oAccuracy
+oPrecision, recall, F1-score
+oConfusion matrix
+2.Optionally, perform k-fold cross-validation to assess model robustness.
+3.Compare performance across different architectures or hyperparameter choices if multiple models were trained.
+Deliverables:
+Table or visualization of evaluation metrics.
+Confusion matrix plot.
+Discussion of performance results and any observed patterns.
+
+Task 6: Interpretation and Reporting
+Instructions:
+1.Analyze the model results in the context of the dataset.
+2.Identify model strengths and weaknesses.
+3.Suggest potential improvements, such as feature selection, model architecture changes, or alternative algorithms.
+4.Reflect on the overall workflow from data preprocessing to evaluation.
+Deliverables:
+Written report (3-5  pages) summarizing analysis, findings, and recommendations.
+Supporting visualizations where appropriate.
+
+
+

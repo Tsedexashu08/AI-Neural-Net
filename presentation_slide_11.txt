@@ -1,0 +1,25 @@
+
+# Slide 11: Conclusion & Future Work
+
+**Conclusion:**
+*   Successfully built a neural network model with **96.7% accuracy**.
+*   The model is effective but shows some bias towards majority classes.
+*   The project highlights the importance of a structured workflow, from data cleaning to model evaluation.
+
+**Future Work:**
+*   **Advanced Imbalance Handling:**
+    *   Use techniques like SMOTE (Synthetic Minority Over-sampling Technique) or focal loss.
+*   **Feature Engineering:**
+    *   Create new features to provide more signal to the model.
+*   **Hyperparameter Tuning:**
+    *   Systematically search for optimal hyperparameters.
+*   **Alternative Models:**
+    *   Explore other models like Gradient Boosting Machines (XGBoost, LightGBM).
+
+---
+**Slide Notes:**
+
+*   In conclusion, we have successfully built a high-performing neural network model for classifying accident severity.
+*   The model's high accuracy is a testament to the effectiveness of our approach. However, we also identified a key weakness in its handling of imbalanced data.
+*   For future work, we have several promising directions. We can address the class imbalance issue with more advanced techniques, we can try to engineer new features to improve the model's performance, and we can also explore other model architectures and algorithms.
+*   This project has been a valuable learning experience and provides a solid foundation for future work in this area.

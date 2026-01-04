@@ -1,0 +1,21 @@
+,,0
+Driver age,Driver experiance(years),0.6269356099364163
+Driver experiance(years),Driver age,0.6269356099364163
+Location Northing,Location Easting,0.5584218293891914
+Location Easting,Location Northing,0.5584218293891914
+Victim-2 age,Victim-3 age,0.4449016582306551
+Victim-3 age,Victim-2 age,0.4449016582306551
+Number of minor injuries,Victim-1 age,0.3033447889194092
+Victim-1 age,Number of minor injuries,0.3033447889194092
+Number of involved vehicles,Number of minor injuries,0.28772441454919717
+Number of minor injuries,Number of involved vehicles,0.28772441454919717
+Number of sever injuries,Victim-3 age,0.24496528053788816
+Victim-3 age,Number of sever injuries,0.24496528053788816
+Accident ID,Number of minor injuries,-0.24040614816104136
+Number of minor injuries,Accident ID,-0.24040614816104136
+Number of sever injuries,Number of minor injuries,-0.2368870650749898
+Number of minor injuries,Number of sever injuries,-0.2368870650749898
+Victim-2 age,Number of minor injuries,0.2315519931242074
+Number of minor injuries,Victim-2 age,0.2315519931242074
+Number of sever injuries,Victim-2 age,0.21390536287632517
+Victim-2 age,Number of sever injuries,0.21390536287632517

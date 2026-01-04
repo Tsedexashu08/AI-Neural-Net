@@ -1,0 +1,287 @@
+
+# Slide 1: Title Slide
+
+**Title:** Neural Network-Based Classification for Crash Data
+
+**Subtitle:** Project Report
+
+**Name/ID:** [Your Name/ID]
+
+**Date:** January 3, 2026
+
+---
+**Slide Notes:**
+
+*   Welcome everyone to my presentation on the neural network-based classification model for crash data.
+*   This project was undertaken as part of the requirements for the Neural Network-Based Classification assignment.
+*   Today, I will walk you through the process of building, training, and evaluating this model.
+
+---
+---
+
+# Slide 2: Project Overview
+
+**Objective:**
+To build, train, and evaluate a neural network to classify the severity of vehicle accidents based on the `CrashData.xlsx` dataset.
+
+**Agenda:**
+1.  **Data Understanding:** A quick look at the data.
+2.  **Data Preparation:** How the data was cleaned and prepared.
+3.  **Model Architecture:** The design of our neural network.
+4.  **Training & Evaluation:** How the model was trained and how it performed.
+5.  **Conclusion:** Key takeaways and future work.
+
+---
+**Slide Notes:**
+
+*   The main goal of this project is to create a model that can accurately predict the type of accident, which could be useful for various purposes, such as resource allocation for emergency services.
+*   In this presentation, we will follow a structured agenda. We will start by understanding the data, then move on to how we prepared it for the model. After that, we will look at the model's architecture and its performance. Finally, we will conclude with a summary and some ideas for future work.
+*   I will be highlighting the key findings and decisions made at each step of the process.
+
+---
+---
+
+# Slide 3: Data Understanding - Initial Insights
+
+**Key Stats:**
+*   **Shape:** 60,004 rows, 54 columns
+*   **Features:** 22 Numeric, 31 Categorical
+*   **Missing Values:** Significant number of missing values found. Columns with >30% missing data were dropped.
+*   **Duplicates:** No duplicate rows found.
+
+**(Right side of the slide: Include the `class_distribution.png` image)**
+
+---
+**Slide Notes:**
+
+*   Let's start by looking at the data. We began with a dataset of over 60,000 records and 54 features.
+*   The features were a mix of numerical and categorical data.
+*   A major challenge was the presence of a large number of missing values. Our strategy was to drop columns that were mostly empty and then impute the rest.
+*   On the bright side, the data was clean in terms of duplicate records.
+*   The chart on the right shows the distribution of our target variable, 'Accident Type'. As you can see, the classes are quite imbalanced, with 'Minor' and 'PDO' (Property Damage Only) being the most frequent. This is a crucial point that we will address later.
+
+---
+---
+
+# Slide 4: Data Understanding - Feature Analysis
+
+**(Left side of the slide: Include the `feature_distributions.png` image)**
+
+**(Right side of the slide: Include the `correlation_heatmap.png` image)**
+
+**Key Takeaways:**
+*   **Feature Distributions:** Revealed a wide range of values and distributions for various features.
+*   **Correlations:** The heatmap shows the relationships between numeric features. A strong positive correlation (0.63) was found between `Driver age` and `Driver experiance(years)`.
+
+---
+**Slide Notes:**
+
+*   To further understand our data, we visualized the distributions of our features and the correlations between them.
+*   The feature distributions on the left gave us insights into the characteristics of each feature, such as the age of the drivers or the year of service of the vehicles.
+*   The correlation heatmap on the right helped us identify relationships between numeric variables. For example, as expected, there is a strong positive correlation between a driver's age and their years of experience.
+*   These analyses were vital for our data preparation and feature engineering decisions.
+
+---
+---
+
+# Slide 5: Data Preparation
+
+**Our Preprocessing Pipeline:**
+
+1.  **Missing Value Handling:**
+    *   Dropped columns with >30% missing values.
+    *   Imputed numeric features with the **median**.
+    *   Imputed categorical features with the **mode**.
+
+2.  **Categorical Encoding:**
+    *   **Label Encoding** for binary features.
+    *   **One-Hot Encoding** for low-cardinality features.
+    *   **Frequency Encoding** for high-cardinality features.
+
+3.  **Feature Scaling:**
+    *   **StandardScaler** was used to normalize all numeric features.
+
+4.  **Data Split:**
+    *   **70%** for Training
+    *   **15%** for Validation
+    *   **15%** for Testing
+    *   Stratified split to maintain class balance.
+
+---
+**Slide Notes:**
+
+*   Preparing the data for our neural network was a critical step. We established a preprocessing pipeline to handle the challenges we identified in the data.
+*   First, we dealt with missing values by dropping sparse columns and imputing the rest.
+*   Next, we converted all categorical features into a numerical format that the model can understand, using a mix of encoding strategies based on the number of unique values in each feature.
+*   Then, we scaled all our numeric features so that they are on the same scale. This is very important for neural networks.
+*   Finally, we split our data into training, validation, and test sets. We used a stratified split to ensure that the proportion of each accident type was the same in all three sets, which is important given the class imbalance we saw earlier.
+
+---
+---
+
+# Slide 6: Model Architecture
+
+**(Center of the slide: A diagram of the neural network architecture)**
+
+**Network Design:**
+*   **Input Layer:** Takes the preprocessed feature vector.
+*   **Hidden Layers:** 3 Dense layers with 64, 32, and 16 neurons.
+    *   **Activation:** ReLU
+*   **Output Layer:**
+    *   **Activation:** Softmax (for multi-class classification)
+
+**Regularization:**
+*   **L2 Regularization (λ=0.001)**
+*   **Dropout (Rate=0.3)**
+*   **Batch Normalization**
+
+---
+**Slide Notes:**
+
+*   Now let's look at the heart of our project: the neural network architecture.
+*   We designed a 3-layer deep neural network. The number of neurons decreases in each layer, which helps the network to learn more abstract and compressed representations of the data.
+*   We used the ReLU activation function in the hidden layers, which is a standard and effective choice for deep learning models.
+*   The output layer uses a Softmax activation function to output a probability for each of the accident types.
+*   To prevent our model from overfitting, we used a combination of three regularization techniques: L2 regularization, which penalizes large weights; Dropout, which randomly deactivates neurons during training; and Batch Normalization, which helps to stabilize the learning process.
+
+---
+---
+
+# Slide 7: Training Process
+
+**(Show the `training_history.png` plot)**
+
+**Hyperparameters:**
+*   **Optimizer:** Adam
+*   **Learning Rate:** 0.001 (with `ReduceLROnPlateau`)
+*   **Batch Size:** 32
+*   **Epochs:** Max 100 (with `EarlyStopping`)
+
+**Overfitting Prevention:**
+*   **Early Stopping:** Patience of 15 epochs.
+*   **ReduceLROnPlateau:** Reduces learning rate if validation loss plateaus.
+*   **Model Checkpointing:** Saves the best model based on validation accuracy.
+
+---
+**Slide Notes:**
+
+*   This slide shows the training history of our model. The plots show the accuracy and loss for both the training and validation sets over the epochs.
+*   We used the Adam optimizer, a popular choice that works well in practice. The learning rate was initially set to 0.001, but we used a callback to reduce it if the learning process plateaued.
+*   We trained the model in batches of 32 for a maximum of 100 epochs.
+*   However, we also used Early Stopping to monitor the validation loss and stop the training if the model was no longer improving. This, along with our other regularization techniques, helped to prevent overfitting.
+*   As you can see from the plots, the training and validation curves track each other very well, which indicates that our model is generalizing well and not just memorizing the training data.
+
+---
+---
+
+# Slide 8: Evaluation - Overall Performance
+
+**Key Metrics (on Test Set):**
+
+*   **Accuracy:**
+    <br>
+    <font size="7"><b>96.7%</b></font>
+
+*   **Weighted F1-Score:**
+    <br>
+    <font size="7"><b>96.6%</b></font>
+
+*   **Weighted Precision:**
+    <br>
+    <font size="7"><b>96.6%</b></font>
+
+*   **Weighted Recall:**
+    <br>
+    <font size="7"><b>96.7%</b></font>
+
+---
+**Slide Notes:**
+
+*   Now for the moment of truth: how did our model perform on data it has never seen before?
+*   We evaluated our final model on the test set, and the results were very encouraging.
+*   We achieved an overall accuracy of 96.7%, which means our model correctly predicted the accident type for the vast majority of cases.
+*   The weighted F1-score, precision, and recall are all around 96.6% and 96.7%, which are excellent scores and indicate that the model is both precise and robust.
+*   These high-level metrics give us confidence that our model is effective.
+
+---
+---
+
+# Slide 9: Evaluation - Confusion Matrix
+
+**(Prominently display the `confusion_matrix.png` image)**
+
+**Interpretation:**
+*   The strong diagonal shows that the model is correctly classifying most instances for all classes.
+*   Most of the confusion is between the 'Fatal' and 'Serious' classes, which is an area for improvement.
+*   The majority classes ('Minor' and 'PDO') have very high prediction accuracy.
+
+---
+**Slide Notes:**
+
+*   To get a more detailed picture of our model's performance, we can look at the confusion matrix.
+*   This matrix shows us exactly where the model is making correct and incorrect predictions.
+*   The dark diagonal line indicates a high number of true positives, meaning the model is doing a great job of classifying most of the data.
+*   However, we can also see some areas of confusion. For example, some 'Fatal' accidents are being misclassified as 'Serious'. This is a critical insight, as these are the most severe types of accidents.
+*   This level of detail is essential for understanding the nuances of the model's performance and for identifying areas for improvement.
+
+---
+---
+
+# Slide 10: Evaluation - Per-Class Performance
+
+**(Show the `per_class_metrics.png` bar chart)**
+
+**Key Observations:**
+*   Excellent performance on majority classes like 'Minor' and 'PDO'.
+*   Lower F1-scores for minority classes like 'Fatal' and 'POD'.
+*   This highlights the impact of class imbalance on the model's performance.
+
+---
+**Slide Notes:**
+
+*   This bar chart shows the precision, recall, and F1-score for each individual accident type.
+*   As we saw in the confusion matrix, the model performs exceptionally well on the majority classes, which have a large number of examples in the dataset.
+*   However, for the minority classes, the performance is not as strong. For example, the 'Fatal' class has a lower F1-score.
+*   This is a classic example of the challenge of working with imbalanced datasets. The model is biased towards the majority classes because it has seen many more examples of them during training.
+*   Improving the performance on these minority classes is a key area for future work.
+
+---
+---
+
+# Slide 11: Conclusion & Future Work
+
+**Conclusion:**
+*   Successfully built a neural network model with **96.7% accuracy**.
+*   The model is effective but shows some bias towards majority classes.
+*   The project highlights the importance of a structured workflow, from data cleaning to model evaluation.
+
+**Future Work:**
+*   **Advanced Imbalance Handling:**
+    *   Use techniques like SMOTE (Synthetic Minority Over-sampling Technique) or focal loss.
+*   **Feature Engineering:**
+    *   Create new features to provide more signal to the model.
+*   **Hyperparameter Tuning:**
+    *   Systematically search for optimal hyperparameters.
+*   **Alternative Models:**
+    *   Explore other models like Gradient Boosting Machines (XGBoost, LightGBM).
+
+---
+**Slide Notes:**
+
+*   In conclusion, we have successfully built a high-performing neural network model for classifying accident severity.
+*   The model's high accuracy is a testament to the effectiveness of our approach. However, we also identified a key weakness in its handling of imbalanced data.
+*   For future work, we have several promising directions. We can address the class imbalance issue with more advanced techniques, we can try to engineer new features to improve the model's performance, and we can also explore other model architectures and algorithms.
+*   This project has been a valuable learning experience and provides a solid foundation for future work in this area.
+
+---
+---
+
+# Slide 12: Q&A
+
+**Questions?**
+
+---
+**Slide Notes:**
+
+*   That concludes my presentation. Thank you for your attention.
+*   I would be happy to answer any questions you may have.

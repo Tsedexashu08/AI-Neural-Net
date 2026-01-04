@@ -1,0 +1,126 @@
+CATEGORICAL FEATURES SUMMARY
+==================================================
+
+Time:
+  Unique values: 32
+  Most common: '11:00-12:00' (count: 4482)
+
+Day of the week:
+  Unique values: 7
+  Most common: 'Monday' (count: 9175)
+
+Driver Sex:
+  Unique values: 10
+  Most common: 'Male' (count: 56352)
+
+Driver Education Level:
+  Unique values: 23
+  Most common: 'Between grade 8 and 12' (count: 36462)
+
+Driver Vehicle Relation:
+  Unique values: 12
+  Most common: 'Employee' (count: 37319)
+
+Vehicle Type:
+  Unique values: 12
+  Most common: 'Automobile' (count: 15512)
+
+Veh Ownership:
+  Unique values: 18
+  Most common: 'Private' (count: 49623)
+
+Vehicle Defects:
+  Unique values: 3
+  Most common: 'No' (count: 57636)
+
+Land Use:
+  Unique values: 18
+  Most common: 'Market area' (count: 24308)
+
+Road Type:
+  Unique values: 7
+  Most common: 'Two-way divided by median' (count: 43618)
+
+Road Surface:
+  Unique values: 5
+  Most common: 'Dry' (count: 55913)
+
+Road Character:
+  Unique values: 6
+  Most common: 'Straight' (count: 56168)
+
+Junction Type:
+  Unique values: 7
+  Most common: 'No Junction' (count: 29403)
+
+Light Condition:
+  Unique values: 7
+  Most common: 'Day-Good visibility' (count: 48996)
+
+Weather Condition:
+  Unique values: 7
+  Most common: 'Dry' (count: 55530)
+
+Driver's Action:
+  Unique values: 12
+  Most common: 'Moving straignt' (count: 37660)
+
+Primary Collision type:
+  Unique values: 13
+  Most common: 'Rear end collision' (count: 15611)
+
+Woreda (Sub-city):
+  Unique values: 15
+  Most common: 'Bole' (count: 12932)
+
+Victim-1 Type:
+  Unique values: 10
+  Most common: 'Driver' (count: 23870)
+
+Victim-2 Type:
+  Unique values: 4
+  Most common: 'Passenger' (count: 854)
+
+Victim-3 Type:
+  Unique values: 4
+  Most common: 'Passenger' (count: 260)
+
+Victim-1 Sex:
+  Unique values: 9
+  Most common: 'Male' (count: 39147)
+
+Victim-2 Sex:
+  Unique values: 3
+  Most common: 'Male' (count: 1168)
+
+Victim-3 Sex:
+  Unique values: 3
+  Most common: 'Male' (count: 303)
+
+Victim-1 Injury Severity:
+  Unique values: 13
+  Most common: 'Light Injury' (count: 37727)
+
+Victim-2 Injury Severity:
+  Unique values: 4
+  Most common: 'Light Injury' (count: 984)
+
+Victim-3 Injury Severity:
+  Unique values: 3
+  Most common: 'Light Injury' (count: 222)
+
+Victim-1 Movement:
+  Unique values: 10
+  Most common: 'Crossing road along ZEBRA' (count: 1798)
+
+Victim-2 Movement:
+  Unique values: 10
+  Most common: 'Walking along traffic' (count: 71)
+
+Victim-3 Movement:
+  Unique values: 8
+  Most common: 'Walking along traffic' (count: 28)
+
+Wor:
+  Unique values: 31
+  Most common: 'June' (count: 5474)

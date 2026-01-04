@@ -1,0 +1,32 @@
+
+# Slide 5: Data Preparation
+
+**Our Preprocessing Pipeline:**
+
+1.  **Missing Value Handling:**
+    *   Dropped columns with >30% missing values.
+    *   Imputed numeric features with the **median**.
+    *   Imputed categorical features with the **mode**.
+
+2.  **Categorical Encoding:**
+    *   **Label Encoding** for binary features.
+    *   **One-Hot Encoding** for low-cardinality features.
+    *   **Frequency Encoding** for high-cardinality features.
+
+3.  **Feature Scaling:**
+    *   **StandardScaler** was used to normalize all numeric features.
+
+4.  **Data Split:**
+    *   **70%** for Training
+    *   **15%** for Validation
+    *   **15%** for Testing
+    *   Stratified split to maintain class balance.
+
+---
+**Slide Notes:**
+
+*   Preparing the data for our neural network was a critical step. We established a preprocessing pipeline to handle the challenges we identified in the data.
+*   First, we dealt with missing values by dropping sparse columns and imputing the rest.
+*   Next, we converted all categorical features into a numerical format that the model can understand, using a mix of encoding strategies based on the number of unique values in each feature.
+*   Then, we scaled all our numeric features so that they are on the same scale. This is very important for neural networks.
+*   Finally, we split our data into training, validation, and test sets. We used a stratified split to ensure that the proportion of each accident type was the same in all three sets, which is important given the class imbalance we saw earlier.

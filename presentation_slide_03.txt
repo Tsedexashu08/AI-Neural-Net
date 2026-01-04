@@ -1,0 +1,19 @@
+
+# Slide 3: Data Understanding - Initial Insights
+
+**Key Stats:**
+*   **Shape:** 60,004 rows, 54 columns
+*   **Features:** 22 Numeric, 31 Categorical
+*   **Missing Values:** Significant number of missing values found. Columns with >30% missing data were dropped.
+*   **Duplicates:** No duplicate rows found.
+
+**(Right side of the slide: Include the `class_distribution.png` image)**
+
+---
+**Slide Notes:**
+
+*   Let's start by looking at the data. We began with a dataset of over 60,000 records and 54 features.
+*   The features were a mix of numerical and categorical data.
+*   A major challenge was the presence of a large number of missing values. Our strategy was to drop columns that were mostly empty and then impute the rest.
+*   On the bright side, the data was clean in terms of duplicate records.
+*   The chart on the right shows the distribution of our target variable, 'Accident Type'. As you can see, the classes are quite imbalanced, with 'Minor' and 'PDO' (Property Damage Only) being the most frequent. This is a crucial point that we will address later.
